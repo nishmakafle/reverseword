@@ -1,13 +1,26 @@
-def wordReverse(string):
-    # Split the string into multiple word in list form
-    list1 = string.split(' ')
-    list1.reverse()           # Reverse the splited list
-    list1 = ' '.join(list1)   # Join the list and make a sentence
-    return list1			  # Return that list to the function wordReverse
+
+# Function that reverse the words of the sentence
 
 
-# Asked the Sentence, and saved it into question
-question = input('Please enter a sentence: ')
-# Apply the wordReverse function and get the answer which is saved in answer variable
-answer = wordReverse(question)
-print(answer)  # Print the Answer
+def wordreverse(sentence):
+    # Split word of string seperated  by space
+    word_list = sentence.split(' ')
+    # print("Step1", words)
+    # Reverse List of words
+    # first is -1 that means start from last element
+    # second argument is empty that means move to end of list
+    # third arguments is difference of steps
+    reversed_word_list = word_list[-1::-1]
+    # print("Step2", words)
+    # Now Join words with space
+    reversed_sentence = ' '.join(reversed_word_list)
+    # print("Step3", new_words)
+    # Return the Output to wordreverse Function
+    return reversed_sentence
+
+
+# Take the String form user and store it in string variable
+sentence = input('Type the sentence to reverse: ')
+# call the wordreverse function with string as an argument
+reversed_string = wordreverse(sentence)
+print(reversed_string)
